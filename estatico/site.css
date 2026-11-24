@@ -80,7 +80,7 @@ p { margin: 0; text-wrap: pretty; }
 .exemplo-topo img { width: 20px; height: 20px; }
 .exemplo-cartoes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 .exemplo-cartao { background: var(--bica-fundo); border: 1px solid var(--bica-borda); border-radius: 10px; padding: 12px; display: grid; gap: 4px; min-width: 0; }
-.exemplo-cartao b { font-family: var(--bica-fonte-numero); font-weight: 500; font-size: 18px; white-space: nowrap; }
+.exemplo-cartao b { font-family: var(--bica-fonte-numero); font-weight: 500; font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .exemplo-linhas { display: grid; }
 .exemplo-linha { display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: center; padding: 9px 2px; border-top: 1px solid var(--bica-borda); }
 .exemplo-linha .valor { font-family: var(--bica-fonte-numero); white-space: nowrap; }
@@ -124,6 +124,14 @@ a.cartao:hover { border-color: var(--bica-acao); color: var(--bica-texto); }
 .vizinhos { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
 .duas-colunas.iguais { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.frente { align-items: center; gap: 48px; }
+.frente-texto { display: grid; gap: 16px; }
+.frente.invertida > .frente-texto { order: 2; }
+.fichas { display: flex; flex-wrap: wrap; gap: 8px; }
+.fichas a { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--bica-borda);
+  border-radius: 999px; background: var(--bica-superficie); color: var(--bica-texto); text-decoration: none; font-size: 14px; }
+.fichas a:hover { border-color: var(--bica-acao); }
+.fichas img { width: 18px; height: 18px; }
 .numero-grande { font-family: var(--bica-fonte-numero); font-weight: 500; font-size: 34px; line-height: 1.1; color: var(--bica-acao); }
 .historia { display: grid; gap: 16px; align-content: start; font-size: 18px; max-width: 56ch; }
 .historia p:first-child { font-family: var(--bica-fonte-titulo); font-weight: 800; font-size: 26px; line-height: 1.2; letter-spacing: -0.02em; }
@@ -165,6 +173,8 @@ a.cartao:hover { border-color: var(--bica-acao); color: var(--bica-texto); }
 
 @media (max-width: 900px) {
   .abertura .miolo, .duas-colunas, .duas-colunas.iguais { grid-template-columns: 1fr; }
+  .frente { gap: 24px; }
+  .frente.invertida > .frente-texto { order: 0; }
   .grade.tres, .grade.quatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .menu { order: 3; width: 100%; margin-left: -12px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .menu::-webkit-scrollbar { display: none; }
