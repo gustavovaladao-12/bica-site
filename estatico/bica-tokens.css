@@ -1,0 +1,110 @@
+/* Bica: cores, letras e medidas da marca. Versão 0.3 (19/11/2026): visual revisto pelo dono.
+   Guia completo em MARCA_BICA.md. Os valores são os mesmos do tema.css do sistema
+   (servidor/telas/estatico/tema.css); lá ficam também as letras guardadas e o símbolo.
+   Dois temas, à escolha do usuário. Sem escolha, vale o ESCURO: data-tema="escuro" no <html>. */
+
+/* Tema claro (e base de tudo que não muda entre os temas). */
+:root {
+  color-scheme: light;
+  /* Cores da marca */
+  --bica-azul-noite: #0F2B3A;
+  --bica-verde-agua: #0B7A6C;
+  --bica-verde-agua-escuro: #075E53;
+  --bica-verde-luz: #6FDDC4;
+  --bica-menta: #CFEFE6;
+  --bica-nevoa: #F4F7F8;
+  --bica-branco: #FFFFFF;
+
+  /* Papéis */
+  --bica-fundo: var(--bica-nevoa);
+  --bica-superficie: var(--bica-branco);
+  --bica-campo: #E9EEF1;
+  --bica-texto: var(--bica-azul-noite);
+  --bica-texto-suave: #4A5B66;
+  --bica-borda: #D5DEE2;
+  --bica-acao: var(--bica-verde-agua);
+  --bica-acao-hover: var(--bica-verde-agua-escuro);
+  --bica-acao-texto: var(--bica-branco);
+  --bica-sombra: var(--bica-azul-noite);
+
+  /* Avisos (aprovados em 19/11/2026). "-vivo": barra, ponto e fundo; "-texto": a cor que se lê. */
+  --bica-certo-vivo: #2ecc71; --bica-atencao-vivo: #f5b800; --bica-laranja-vivo: #f08030; --bica-erro-vivo: #e74c3c;
+  --bica-certo-texto: #0E7A43; --bica-atencao-texto: #8A5A00; --laranja: #B8430A; --bica-erro-texto: #C9281C;
+  --bica-certo-fundo: color-mix(in srgb, var(--bica-certo-vivo) 14%, var(--bica-superficie));
+  --bica-atencao-fundo: color-mix(in srgb, var(--bica-atencao-vivo) 14%, var(--bica-superficie));
+  --bica-erro-fundo: color-mix(in srgb, var(--bica-erro-vivo) 12%, var(--bica-superficie));
+
+  /* Séries de gráfico: proposta, ainda não aprovada e sem uso */
+  --bica-serie-1: #0F2B3A; --bica-serie-2: #0B7A6C; --bica-serie-3: #6FDDC4;
+  --bica-serie-4: #E9A23B; --bica-serie-5: #7A8B95;
+
+  /* Letras */
+  --bica-fonte-titulo: "Plus Jakarta Sans", system-ui, sans-serif;
+  --bica-fonte-texto: Inter, system-ui, sans-serif;
+  --bica-fonte-numero: "DM Mono", ui-monospace, Consolas, monospace;
+  --bica-letra: 14px;
+  --bica-letra-apoio: 13px;
+  --bica-letra-rotulo: 12px;
+
+  /* Medidas. Botão de 38 px no computador e de 44 px em tela de toque ou estreita. */
+  --bica-raio-botao: 8px;
+  --bica-raio-cartao: 12px;
+  --bica-toque-min: 38px;
+}
+@media (max-width: 860px), (pointer: coarse) { :root { --bica-toque-min: 44px; } }
+
+/* Tema escuro (padrão): fundo preto neutro, avisos vivos, verde-luz da Bica na ação. */
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --bica-fundo: #0c0d10;
+  --bica-superficie: #13151a;
+  --bica-campo: #1a1d24;
+  --bica-texto: #e8eaf0;
+  --bica-texto-suave: #9aa0b4;
+  --bica-borda: #272b35;
+  --bica-acao: var(--bica-verde-luz);
+  --bica-acao-hover: #8FE7D3;
+  --bica-acao-texto: #0c0d10;
+  --bica-sombra: #000000;
+  --bica-atencao-vivo: #f5c518; --bica-erro-vivo: #ff6b5b;
+  --bica-certo-texto: #2ecc71; --bica-atencao-texto: #f5c518; --laranja: #f08030; --bica-erro-texto: #ff6b5b;
+}
+
+body {
+  background: var(--bica-fundo);
+  color: var(--bica-texto);
+  font-family: var(--bica-fonte-texto);
+  font-size: var(--bica-letra);
+}
+
+h1, h2, h3 {
+  font-family: var(--bica-fonte-titulo);
+  font-weight: 800;
+}
+
+.bica-botao {
+  min-height: var(--bica-toque-min);
+  padding: 0 20px;
+  border: 0;
+  border-radius: var(--bica-raio-botao);
+  background: var(--bica-acao);
+  color: var(--bica-acao-texto);
+  font-family: var(--bica-fonte-titulo);
+  font-weight: 700;
+  font-size: var(--bica-letra);
+  cursor: pointer;
+}
+.bica-botao:hover { background: var(--bica-acao-hover); }
+
+.bica-cartao {
+  background: var(--bica-superficie);
+  border: 1px solid var(--bica-borda);
+  border-radius: var(--bica-raio-cartao);
+}
+
+.bica-numero { font-family: var(--bica-fonte-numero); }
+.bica-rotulo { font-family: var(--bica-fonte-numero); font-size: var(--bica-letra-rotulo); text-transform: uppercase; color: var(--bica-texto-suave); }
+
+.bica-logo { display: inline-flex; align-items: center; gap: 0.2em; color: var(--bica-texto); }
+.bica-logo svg { width: 1.05em; height: 1.05em; }
+.bica-logo-nome { font-family: var(--bica-fonte-titulo); font-weight: 800; letter-spacing: -0.025em; line-height: 1; }
