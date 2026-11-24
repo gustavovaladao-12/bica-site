@@ -1,45 +1,33 @@
 <!doctype html>
-<html lang="pt-BR" data-tema="escuro">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contato · Bica</title>
-<meta name="description" content="Peça uma demonstração da Bica.">
+<meta name="description" content="Fale com a Bica pelo WhatsApp e peça uma demonstração.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../estatico/bica-icone.svg" type="image/svg+xml">
-<script>try{if(localStorage.getItem("bica-site-tema")==="claro")document.documentElement.removeAttribute("data-tema")}catch(e){}</script>
+<script>try{if(localStorage.getItem("bica-site-tema")==="escuro")document.documentElement.setAttribute("data-tema","escuro")}catch(e){}</script>
 <link rel="stylesheet" href="../estatico/bica-tokens.css">
 <link rel="stylesheet" href="../estatico/site.css">
 </head>
 <body>
 <header class="topo"><div class="miolo">
   <a class="bica-logo" href="../index.html" aria-label="Bica, página inicial"><svg viewBox="0 0 56 56" aria-hidden="true"><rect class="s1" x="6" y="8" width="10" height="12" rx="2"/><rect class="s2" x="18" y="17" width="10" height="12" rx="2"/><rect class="s2" x="30" y="26" width="10" height="12" rx="2"/><rect class="s3" x="42" y="35" width="10" height="12" rx="2"/><line class="sl" x1="6" y1="51" x2="52" y2="51" stroke-width="3" stroke-linecap="round"/></svg><span class="bica-logo-nome">Bica</span></a>
-  <nav class="menu" aria-label="Páginas"><a href="../modulos/index.html">Módulos</a><a href="../planos/index.html">Planos</a><a href="../como-funciona/index.html">Como funciona</a><a href="../ajuda/index.html">Ajuda</a><a href="../contato/index.html" aria-current="page">Contato</a></nav>
+  <nav class="menu" aria-label="Páginas"><a href="../modulos/index.html">Módulos</a><a href="../planos/index.html">Planos</a><a href="../como-funciona/index.html">Como funciona</a><a href="../sobre/index.html">Sobre</a><a href="../ajuda/index.html">Ajuda</a><a href="../contato/index.html" aria-current="page">Contato</a></nav>
   <div class="lado">
     <a class="botao-claro pequeno" href="https://app.bicasistemas.com.br/entrar">Área do cliente</a>
-    <button class="botao-tema" type="button" data-botao-tema>Tema claro</button>
+    <button class="botao-tema" type="button" data-botao-tema>Tema escuro</button>
   </div>
 </div></header>
 <main>
-<section class="pagina-cabeca"><div class="miolo"><span class="rotulo">Contato</span><h1>Peça uma demonstração.</h1><p>Conte um pouco da sua loja. A gente responde pelo WhatsApp e marca um horário.</p></div></section>
+<section class="pagina-cabeca"><div class="miolo"><span class="rotulo">Contato</span><h1>Chame a gente no WhatsApp.</h1><p>É o jeito mais rápido. Você fala com quem conhece loja, tira as dúvidas e marca a demonstração.</p></div></section>
 <section class="secao" style="padding-top:0"><div class="miolo duas-colunas">
-  <form class="cartao formulario" data-form-contato data-whatsapp="5562992526904">
-    <div class="campo-par">
-      <div class="campo"><label for="nome">Seu nome</label><input id="nome" name="nome" autocomplete="name" required></div>
-      <div class="campo"><label for="loja">Nome da loja</label><input id="loja" name="loja" autocomplete="organization" required></div>
-    </div>
-    <div class="campo-par">
-      <div class="campo"><label for="cidade">Cidade e estado</label><input id="cidade" name="cidade" autocomplete="address-level2"></div>
-      <div class="campo"><label for="lojas">Quantas lojas</label>
-        <select id="lojas" name="lojas"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>Mais de 5</option></select></div>
-    </div>
-    <div class="campo"><label for="interesse">O que você quer resolver primeiro</label>
-      <input id="interesse" name="interesse" placeholder="Ex.: cobrança do crediário, conferência do caixa"></div>
-    <div class="campo"><label for="mensagem">Recado (se quiser)</label><textarea id="mensagem" name="mensagem"></textarea></div>
-    <p class="aviso" data-aviso hidden role="status"></p>
-    <div><button class="botao" type="submit">Pedir demonstração pelo WhatsApp</button></div>
-    <p class="suave" style="font-size:14px">O site não guarda o que você escreve aqui: os dados vão só na mensagem que você mesmo envia pelo WhatsApp.</p>
-  </form>
+  <div class="cartao" style="gap:16px">
+    <span class="rotulo">Demonstração</span><h3>Meia hora, com as telas funcionando.</h3>
+    <p>Para adiantar, já diga na mensagem quantas lojas você tem e o que quer resolver primeiro: caixa, cobrança, estoque, equipe.</p>
+    <div><a class="botao" href="https://wa.me/5562992526904?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Bica%20e%20quero%20uma%20demonstra%C3%A7%C3%A3o." target="_blank" rel="noopener">Pedir demonstração no WhatsApp</a></div>
+  </div>
   <div class="grade">
     <div class="cartao"><span class="rotulo">Já é cliente?</span><h3>Fale com o suporte por dentro do sistema.</h3>
       <p>O botão "Pedir ajuda" já leva a tela em que você está, e o atendimento anda mais rápido.</p>
@@ -56,7 +44,7 @@
   </div>
   <div><span class="rotulo">Site</span><ul>
     <li><a href="../modulos/index.html">Módulos</a></li><li><a href="../planos/index.html">Planos</a></li>
-    <li><a href="../como-funciona/index.html">Como funciona</a></li><li><a href="../contato/index.html">Contato</a></li></ul></div>
+    <li><a href="../como-funciona/index.html">Como funciona</a></li><li><a href="../sobre/index.html">Sobre</a></li><li><a href="../contato/index.html">Contato</a></li></ul></div>
   <div><span class="rotulo">Para clientes</span><ul>
     <li><a href="https://app.bicasistemas.com.br/entrar">Área do cliente</a></li><li><a href="../ajuda/index.html">Central de ajuda</a></li></ul></div>
   <p class="fim">Bica Sistemas. Feito por lojista, para lojista. As telas e os números deste site usam dados fictícios.</p>
